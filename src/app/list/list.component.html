@@ -1,0 +1,14 @@
+<mat-accordion multi="true" *ngFor="let p of posts" >
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+      Title: {{p.title}}
+    </mat-expansion-panel-header>
+    <p>Desc:{{p.description}}</p>
+    <p>Link:<a [href]="p.link">{{p.link}}></a></p>
+    <p>img:<a [href]="p.img">{{p.img}}></a></p>
+    <mat-action-row>
+      <a  mat-button [routerLink]="['/edit',p.id]">Edit</a>
+      <button mat-button color="warn" (click)="onDelete(p.id)">Delete </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>

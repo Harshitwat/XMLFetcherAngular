@@ -1,0 +1,51 @@
+<form [formGroup]="form" (submit)="onSave()">
+  <div class="form-group" style="width: 25%;">
+    <mat-form-field>
+      <input
+      matInput
+      formControlName="title"
+      type="text"
+      placeholder="Title"
+      class="form-control">
+      <mat-error *ngIf="form.get('title').invalid">Please enter a valid title</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group" style="width: 25%;">
+    <mat-form-field>
+      <textarea
+      matInput
+      formControlName="description"
+      type="text"
+      placeholder="Description"
+      class="form-control"></textarea>
+      <mat-error *ngIf="form.get('description').invalid">Please enter a valid description</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group" style="width: 25%;">
+    <mat-form-field>
+      <input
+      matInput
+      formControlName="link"
+      placeholder="Link"
+      type="text"
+      class="form-control">
+      <mat-error *ngIf="form.get('link').invalid">Please enter a valid link</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group" style="width: 25%;">
+    <mat-form-field>
+      <input
+      matInput
+      formControlName="img"
+      placeholder="img"
+      type="text"
+      class="form-control">
+      <mat-error *ngIf="form.get('img').invalid">Please enter a valid img</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <button type="submit"
+    mat-raised-button
+    color="primary">Save</button>
+  </div>
+</form>

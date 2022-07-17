@@ -1,0 +1,32 @@
+<mat-card>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <mat-form-field>
+      <input
+      matInput
+       type="text"
+       formControlName="url"
+       placeholder="XML URL"
+        >
+        <mat-error *ngIf="form.get('url').invalid">Please enter a xml url</mat-error>
+    </mat-form-field>
+
+      <button
+       mat-raised-button
+        color="primary"
+         type="submit" >Submit</button>
+
+  </form>
+</mat-card>
+<mat-accordion multi="true" *ngFor="let p of posts">
+  <mat-expansion-panel >
+    <mat-expansion-panel-header>
+     Title: {{p.title}}
+    </mat-expansion-panel-header>
+    <p>Desc:{{p.description}}</p>
+    <p>Link:<a [href]="p.link">{{p.link}}></a></p>
+    <p>img:<a [href]="p.img">{{p.img}}></a></p>
+    <mat-action-row>
+      <button mat-button color="accent"(click)="addPost(p)">Create Post </button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
